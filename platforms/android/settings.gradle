@@ -1,0 +1,5 @@
+// GENERATED FILE - DO NOT EDIT
+include ":"
+include ":CordovaLib"
+include ":cordova-plugin-background-app:goblob-background-activity-lib"
+include ":com.google.playservices:goblob-google-play-services_lib"

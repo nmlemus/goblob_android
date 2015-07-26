@@ -1,0 +1,135 @@
+
+<style>
+    h1 {
+        text-align: center;
+    }
+    div#welcome {
+        height: 100vh;
+        background: black;
+    }
+
+    .back {
+        left: 0px;
+        position: relative;
+        top: 5px;
+        height: 20px;
+        padding-right:2px;
+        padding-left:2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font:normal 35px arial;
+        color:white;
+        font-weight: 500;
+    }
+    .personname {
+        left: 0px;
+        position: relative;
+        top: 2px;
+        height: 20px;
+        padding-right:2px;
+        padding-left:2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font:normal 20px arial;
+        color:white;
+        font-weight: 500;
+    }
+
+    .notification-count {
+        right: 9px;
+        position: absolute;
+        top: 3px;
+        height: 18px;
+        background:red;
+        padding-right:1px;
+        padding-left:1px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border:solid 1px #9daccc;
+        font:normal 12px arial;
+        color:white;
+        font-weight: 700;
+    }
+
+
+    .timercount {
+        right: 9px;
+        position: absolute;
+        top: 3px;
+        height: 18px;
+        padding-right:1px;
+        padding-left:1px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font:normal 12px arial;
+        color:#000000;
+        font-weight: 700;
+    }
+
+
+    .buttondemoBasicUsage section {
+        background: #f7f7f7;
+        border-radius: 3px;
+        text-align: center;
+        margin: 1em;
+        position: relative !important;
+        padding-bottom: 10px; }
+    .buttondemoBasicUsage md-content {
+        margin-right: 7px; }
+    .buttondemoBasicUsage section .md-button {
+        margin-top: 16px;
+        margin-bottom: 16px; }
+    .buttondemoBasicUsage .label {
+        position: absolute;
+        bottom: 5px;
+        left: 7px;
+        font-size: 14px;
+        opacity: 0.54; }
+
+</style>
+
+
+        <md-toolbar class="md-theme-light">
+
+            <div tool layout horizontal flex>
+            <span id = "back" class="back">
+
+                <a ng-click="back()" style="color: white">
+
+                    <img src="img/icons/ic_arrow_back_48px-128.png" style="height: 50px;width: 30px;"/>
+
+                </a>
+
+            </span>
+
+
+                <h1 style="font-size: 18px;font-weight: bold;right: 10px;";>
+                        <img ng-src={{person.img}} style="height: 50px;width: 50px;"/>
+                        <span class="personname">{{person.name}}</span>
+                </h1>
+
+
+                <span flex></span>
+            </div>
+
+        </md-toolbar>
+
+
+   <template is="auto-binding">
+
+  	<section layout vertical fit id="chat" style="height: calc(100% - (35px));top: 35px;">
+		<div flex class="chat-list">
+			<template repeat="{{message in messageList}}">
+				<x-chat-list color="{{message.color}}" avatar="{{message.avatar}}" username="{{message.uuid}}" text="{{message.text}}"  status="{{message.status}}" timestamp="{{message.timestamp}}"></x-chat-list>
+			</template>
+		</div>
+		<div class="shim"></div>
+
+		<div class="send-message" layout horizontal>
+	    	<paper-input flex label="Type message..." id="input" value="{{input}}" on-keyup="{{checkKey}}"></paper-input>
+	    	<paper-fab icon="send" id="sendButton" on-tap="{{sendMyMessage}}" style = "background:blue;"></paper-fab>
+	    </div>
+  	</section>
+    </template>
+
+

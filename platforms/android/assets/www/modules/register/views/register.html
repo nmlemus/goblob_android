@@ -1,0 +1,48 @@
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    div#welcome {
+        height: 100vh;
+        background: black;
+    }
+
+</style>
+
+
+<div>
+    <div id="welcome">
+        <md-toolbar class="md-whiteframe-glow-z2">
+            <div class="md-toolbar-tools">
+                <ng-md-icon icon="reorder" style="fill: white" aria-label="Search"></ng-md-icon>
+                <h1>Goblob V 15.07.24</h1>
+
+                <span flex></span>
+
+                <ng-md-icon icon="search" style="fill: white" aria-label="Search"></ng-md-icon>
+                <ng-md-icon icon="settings" style="fill: white" aria-label="Search"></ng-md-icon>
+            </div>
+        </md-toolbar>
+
+        <md-content layout-padding flex style="height: calc(100% - (64px));width: 100%;">
+            <h1>Please, enter your phone number</h1>
+            <section>
+
+            </section>
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-input-container md-no-float>
+                    <input type="tel" international-phone-number ng-model="username">
+                </md-input-container>
+            </section>
+
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-button ng-click="createUser()" style="width: calc(100% - (16px));height:40px;"
+                           class="md-raised md-primary">Register
+                </md-button>
+            </section>
+        </md-content>
+    </div>
+</div>
+
+
