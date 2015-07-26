@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12c8a26a-5d90-47f3-8e48-887cba167a60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="12c8a26a-5d90-47f3-8e48-887cba167a60" name="Default" comment="" />
     <list id="0e623c49-6015-49f8-8bd9-626019245240" name="New changelist" comment="" />
     <ignored path="goblob.iws" />
     <ignored path=".idea/workspace.xml" />
