@@ -19,23 +19,23 @@ angular
             function onDeviceReady() {
                 var div = document.getElementById("map");
                 map = plugin.google.maps.Map.getMap(div);
-                map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+                map.addEventListener(plugin.google.maps.event.MAP_READY, onMapInit);
                 console.log("onDeviceReady del controlador Contacts");
             }
 
-            function onMapReady(map) {
+            function onMapInit(map) {
                 //navigator.geolocation.getCurrentPosition(onSuccess, onError);
-                map.getMyLocation(onSuccess, onError);
-                map.showDialog();
+                //map.getMyLocation(onSuccess, onError);
+                //map.showDialog();
             }
 
             var onSuccess = function(location) {
                 var msg = ["Current your location:\n",
                     "latitude:" + location.latLng.lat,
                     "longitude:" + location.latLng.lng,
-                    "speed:" + location.speed,
-                    "time:" + location.time,
-                    "bearing:" + location.bearing].join("\n");
+                    //"speed:" + location.speed,
+                    //"bearing:" + location.bearing,
+                    "time:" + location.time].join("\n");
 
                 map.setClickable(false);
 
@@ -64,7 +64,7 @@ angular
 
 
             $scope.back = function () {
-                $state.go("contacts");
+                map.showDialog();
             }
         }
     ]);
